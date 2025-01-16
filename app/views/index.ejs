@@ -4,8 +4,8 @@
     <title>HELLO LEARNING DAY</title>
     <style>
       body {
-        background-color: pink;
-        color: #fff;
+        background-color: #f0f0f0;
+        color: #333;
         font-family: Arial, sans-serif;
         font-size: 16px;
         line-height: 1.5;
@@ -41,12 +41,47 @@
           text-shadow: 2px 2px #ff00ff;
         }
       }
+      .button {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        font-size: 24px;
+        text-align: center;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .language-select {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
     <h1>HELLO LEARNING DAY</h1>
     <p>Welcome to the GitHub Copilot hands-on!</p>
     <img src="./images/clippy.gif" alt="Clippy">
+    <select class="language-select" id="language-select">
+      <option value="en">English</option>
+      <option value="de">German</option>
+    </select>
+    <button class="button" id="change-language-button">Change Language</button>
+    <script>
+      document.getElementById('change-language-button').addEventListener('click', function() {
+        var language = document.getElementById('language-select').value;
+        alert('Language changed to ' + language);
+      });
+    </script>
   </body>
 </html>
-
