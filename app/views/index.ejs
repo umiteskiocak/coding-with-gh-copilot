@@ -4,7 +4,7 @@
     <title>HELLO LEARNING DAY</title>
     <style>
       body {
-        background-color: #f0f0f0;
+        background-color: red;
         color: #333;
         font-family: Arial, sans-serif;
         font-size: 16px;
@@ -80,6 +80,7 @@
     <script>
       document.getElementById('change-language-button').addEventListener('click', function() {
         var language = document.getElementById('language-select').value;
+        document.cookie = "language=" + language + "; path=/";
         alert('Language changed to ' + language);
       });
     </script>
