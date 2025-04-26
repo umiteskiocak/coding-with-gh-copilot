@@ -4,10 +4,10 @@
     <title>HELLO LEARNING DAY</title>
     <style>
       body {
-        background-color: pink;
-        color: #fff;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        color: #000;
         font-family: Arial, sans-serif;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.5;
         margin: 0;
         padding: 0;
@@ -41,12 +41,54 @@
           text-shadow: 2px 2px #ff00ff;
         }
       }
+      .button-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <h1>HELLO ALDI DX</h1>
-    <p>Welcome to the GitHub Copilot hands-on!</p>
-    <img src="./images/clippy.gif" alt="Clippy">
+    <header>
+      <h1>HELLO ALDI DX</h1>
+      <p>Welcome to the GitHub Copilot hands-on!</p>
+    </header>
+    <main>
+      <img src="./images/clippy.gif" alt="Clippy">
+      <div class="button-container">
+        <button onclick="changeLanguage('de')">Deutsch</button>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="navigateToSupport()">Support</button>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 GitHub Copilot</p>
+    </footer>
+    <script>
+      function changeLanguage(language) {
+        if (language === 'de') {
+          document.querySelector('h1').textContent = 'HALLO ALDI DX';
+          document.querySelector('p').textContent = 'Willkommen zum GitHub Copilot Hands-on!';
+          document.querySelector('button[onclick="changeLanguage(\'de\')"]').textContent = 'Deutsch';
+          document.querySelector('button[onclick="changeLanguage(\'en\')"]').textContent = 'Englisch';
+          document.querySelector('button[onclick="navigateToSupport()"]').textContent = 'Unterstützung';
+        } else {
+          document.querySelector('h1').textContent = 'HELLO ALDI DX';
+          document.querySelector('p').textContent = 'Welcome to the GitHub Copilot hands-on!';
+          document.querySelector('button[onclick="changeLanguage(\'de\')"]').textContent = 'Deutsch';
+          document.querySelector('button[onclick="changeLanguage(\'en\')"]').textContent = 'English';
+          document.querySelector('button[onclick="navigateToSupport()"]').textContent = 'Support';
+        }
+      }
+
+      function navigateToSupport() {
+        window.location.href = '/support';
+      }
+    </script>
   </body>
 </html>
-
