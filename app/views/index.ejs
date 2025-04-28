@@ -4,10 +4,10 @@
     <title>HELLO LEARNING DAY</title>
     <style>
       body {
-        background-color: pink;
-        color: #fff;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        color: #333;
         font-family: Arial, sans-serif;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.5;
         margin: 0;
         padding: 0;
@@ -41,12 +41,47 @@
           text-shadow: 2px 2px #ff00ff;
         }
       }
+      .button-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
     <h1>HELLO Uni Münster</h1>
     <p>Welcome to the GitHub Copilot hands-on!</p>
     <img src="./images/clippy.gif" alt="Clippy">
+    <div class="button-container">
+      <button class="button" onclick="selectLanguage()">Select Language</button>
+      <button class="button" onclick="navigateToSupport()">Support Page</button>
+    </div>
+    <script>
+      function selectLanguage() {
+        var language = prompt("Please select a language: Deutsch or English");
+        if (language.toLowerCase() === "deutsch") {
+          document.body.innerHTML = document.body.innerHTML.replace(/HELLO LEARNING DAY/g, "HALLO LERNTAG");
+          document.body.innerHTML = document.body.innerHTML.replace(/Welcome to the GitHub Copilot hands-on!/g, "Willkommen zum GitHub Copilot Hands-on!");
+        } else if (language.toLowerCase() === "english") {
+          document.body.innerHTML = document.body.innerHTML.replace(/HALLO LERNTAG/g, "HELLO LEARNING DAY");
+          document.body.innerHTML = document.body.innerHTML.replace(/Willkommen zum GitHub Copilot Hands-on!/g, "Welcome to the GitHub Copilot hands-on!");
+        }
+      }
+
+      function navigateToSupport() {
+        window.location.href = "/support";
+      }
+    </script>
   </body>
 </html>
-

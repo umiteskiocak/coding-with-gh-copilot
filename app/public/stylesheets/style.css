@@ -6,3 +6,80 @@ body {
 a {
   color: #00B7FF;
 }
+
+.support-page {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.support-page h1 {
+  font-size: 48px;
+  margin: 0;
+  padding: 50px 0 20px;
+  text-align: center;
+}
+
+.support-page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.support-page label {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.support-page input,
+.support-page textarea {
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.support-page button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.language-selection-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.navigation-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
