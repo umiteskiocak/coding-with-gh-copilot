@@ -1,12 +1,453 @@
+/* ========================================
+   THREADZ — T-Shirt Collection Styles
+   Funny colors, bold vibes, zero chill
+   ======================================== */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Fredoka", sans-serif;
+  color: #1a1a2e;
+  background: #fffaf0;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-a {
-  color: #00B7FF;
+/* Screen-reader-only helper */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff6ec7 0%, #7873f5 30%, #00d4ff 60%, #ffe156 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.hero-eyebrow {
+  font-size: 1.2rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  animation: fadeSlideUp 0.8s ease both;
+}
+
+.hero-title {
+  font-family: "Bangers", cursive;
+  font-size: clamp(4rem, 12vw, 10rem);
+  color: #fff;
+  text-shadow:
+    4px 4px 0 #ff00ff,
+    -2px -2px 0 #00ffcc,
+    6px 6px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeSlideUp 0.8s 0.2s ease both;
+  line-height: 1;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #ffffffdd;
+  margin-top: 0.75rem;
+  animation: fadeSlideUp 0.8s 0.4s ease both;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  background: #ffe156;
+  color: #1a1a2e;
+  font-family: "Bangers", cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 6px 0 #d4b844, 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: fadeSlideUp 0.8s 0.6s ease both;
+}
+
+.cta-btn:hover,
+.cta-btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 0 #d4b844, 0 14px 40px rgba(0, 0, 0, 0.25);
+}
+
+.cta-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #d4b844;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating emoji */
+.hero-floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floater {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  font-size: 2.5rem;
+  animation: floatBounce 4s var(--delay) ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(15deg); }
+}
+
+/* ---------- Marquee ---------- */
+.marquee {
+  background: #1a1a2e;
+  color: #ffe156;
+  font-family: "Bangers", cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  padding: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: marqueeScroll 20s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---------- Section Titles ---------- */
+.section-title {
+  font-family: "Bangers", cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  color: #7873f5;
+  margin-bottom: 0.25rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Collection Grid ---------- */
+.collection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-emoji {
+  font-size: 5rem;
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+/* Unique funny background colors per card */
+.card-1 .card-emoji { background: linear-gradient(135deg, #ff6ec7, #ff9a9e); }
+.card-2 .card-emoji { background: linear-gradient(135deg, #a8ff78, #78ffd6); }
+.card-3 .card-emoji { background: linear-gradient(135deg, #f7971e, #ffd200); }
+.card-4 .card-emoji { background: linear-gradient(135deg, #c471f5, #fa71cd); }
+.card-5 .card-emoji { background: linear-gradient(135deg, #fddb92, #d1fdff); }
+.card-6 .card-emoji { background: linear-gradient(135deg, #00d2ff, #928dab); }
+
+.card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-name {
+  font-family: "Bangers", cursive;
+  font-size: 1.6rem;
+  color: #1a1a2e;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.5rem 0 1rem;
+  flex: 1;
+}
+
+.card-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #7873f5;
+  margin-bottom: 0.75rem;
+}
+
+.card-btn {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #7873f5, #ff6ec7);
+  box-shadow: 0 4px 15px rgba(120, 115, 245, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.3s ease;
+}
+
+.card-btn:hover,
+.card-btn:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(120, 115, 245, 0.5);
+}
+
+.card-btn.added {
+  background: linear-gradient(135deg, #00c853, #69f0ae);
+  box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
+}
+
+/* ---------- Why Us ---------- */
+.why-us {
+  background: linear-gradient(135deg, #1a1a2e, #2d2b55);
+  padding: 4rem 2rem;
+}
+
+.why-us .section-title {
+  color: #ffe156;
+}
+
+.perks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+}
+
+.perk {
+  text-align: center;
+  color: #fff;
+  padding: 1.5rem;
+}
+
+.perk-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.perk h3 {
+  font-family: "Bangers", cursive;
+  font-size: 1.4rem;
+  color: #00d4ff;
+  margin-bottom: 0.4rem;
+}
+
+.perk p {
+  font-size: 0.95rem;
+  color: #ffffffbb;
+}
+
+/* ---------- Newsletter ---------- */
+.newsletter {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ffe156 0%, #ff6ec7 100%);
+}
+
+.newsletter .section-title {
+  color: #1a1a2e;
+}
+
+.newsletter .section-subtitle {
+  color: #1a1a2ecc;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-input {
+  flex: 1 1 250px;
+  padding: 0.85rem 1.25rem;
+  border: 3px solid #1a1a2e;
+  border-radius: 50px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.newsletter-input:focus {
+  border-color: #7873f5;
+}
+
+.newsletter-btn {
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: #1a1a2e;
+  color: #ffe156;
+  font-family: "Bangers", cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.newsletter-btn:hover,
+.newsletter-btn:focus-visible {
+  transform: scale(1.05);
+  background: #2d2b55;
+}
+
+.subscribe-msg {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.subscribe-msg.visible {
+  opacity: 1;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #1a1a2e;
+  color: #ffffffaa;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: #ffe156;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: #00d4ff;
+}
+
+/* ---------- Focus Visible Ring ---------- */
+*:focus-visible {
+  outline: 3px solid #ffe156;
+  outline-offset: 3px;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perks {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 15vw, 6rem);
+  }
+}
+
+/* ---------- Support Page (preserved) ---------- */
 .support-page {
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   color: #333;
@@ -46,32 +487,6 @@ a {
 }
 
 .support-page button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-.language-selection-button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-.navigation-button {
   background-color: #4CAF50;
   border: none;
   color: white;

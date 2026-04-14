@@ -1,87 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>HELLO LEARNING DAY</title>
-    <style>
-      body {
-        background: linear-gradient(to right, #ff7e5f, #feb47b);
-        color: #333;
-        font-family: Arial, sans-serif;
-        font-size: 18px;
-        line-height: 1.5;
-        margin: 0;
-        padding: 0;
-      }
-      h1 {
-        font-size: 48px;
-        margin: 0;
-        padding: 50px 0 20px;
-        text-align: center;
-        animation: blink 1s infinite;
-      }
-      p {
-        font-size: 24px;
-        margin: 0;
-        padding: 0 0 50px;
-        text-align: center;
-        text-shadow: 2px 2px #ff00ff;
-      }
-      img {
-        display: block;
-        margin: auto;
-      }
-      @keyframes blink {
-        0% {
-          text-shadow: 2px 2px #ff00ff;
-        }
-        50% {
-          text-shadow: none;
-        }
-        100% {
-          text-shadow: 2px 2px #ff00ff;
-        }
-      }
-      .button-container {
-        text-align: center;
-        margin-top: 20px;
-      }
-      .button {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🔥 THREADZ — The Wildest T-Shirt Drop of 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>HELLO Uni Münster</h1>
-    <p>Welcome to the GitHub Copilot hands-on!</p>
-    <img src="./images/clippy.gif" alt="Clippy">
-    <div class="button-container">
-      <button class="button" onclick="selectLanguage()">Select Language</button>
-      <button class="button" onclick="navigateToSupport()">Support Page</button>
+    <!-- ============  HERO  ============ -->
+    <header class="hero" aria-label="Hero banner">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">🚀 NEW DROP ALERT 🚀</p>
+        <h1 class="hero-title">
+          <span class="word word-1">THREADZ</span>
+        </h1>
+        <p class="hero-subtitle">Wear the chaos. Own the vibe. 🎨👕</p>
+        <a href="#collection" class="cta-btn" aria-label="Shop the collection">
+          SHOP THE DROP ⬇️
+        </a>
+      </div>
+      <div class="hero-floaters" aria-hidden="true">
+        <span class="floater" style="--delay:0s;--x:10%;--y:20%">👕</span>
+        <span class="floater" style="--delay:0.4s;--x:80%;--y:15%">🌈</span>
+        <span class="floater" style="--delay:0.8s;--x:25%;--y:70%">🎉</span>
+        <span class="floater" style="--delay:1.2s;--x:70%;--y:65%">✨</span>
+        <span class="floater" style="--delay:1.6s;--x:50%;--y:40%">🔥</span>
+        <span class="floater" style="--delay:2s;--x:90%;--y:80%">🦄</span>
+        <span class="floater" style="--delay:2.4s;--x:5%;--y:85%">💜</span>
+      </div>
+    </header>
+
+    <!-- ============  MARQUEE  ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>FREE SHIPPING 🚚 &nbsp; LIMITED EDITION 🏷️ &nbsp; 100% ORGANIC COTTON 🌿 &nbsp; HANDPICKED DESIGNS 🎨 &nbsp; NO BORING TEES ALLOWED 🚫 &nbsp; FREE SHIPPING 🚚 &nbsp; LIMITED EDITION 🏷️ &nbsp; 100% ORGANIC COTTON 🌿 &nbsp; HANDPICKED DESIGNS 🎨 &nbsp; NO BORING TEES ALLOWED 🚫 &nbsp;</span>
+      </div>
     </div>
+
+    <!-- ============  COLLECTION  ============ -->
+    <main>
+      <section id="collection" class="collection" aria-label="T-shirt collection">
+        <h2 class="section-title">🎽 The Collection</h2>
+        <p class="section-subtitle">Six ridiculous tees for six ridiculous moods</p>
+
+        <div class="grid">
+          <!-- Card 1 -->
+          <article class="card card-1" tabindex="0" aria-label="Neon Llama t-shirt">
+            <div class="card-emoji">🦙</div>
+            <div class="card-body">
+              <h3 class="card-name">Neon Llama</h3>
+              <p class="card-desc">A llama in sunglasses on a hot-pink supernova. Why? Because llamas are cool.</p>
+              <div class="card-price">$29.99</div>
+              <button class="card-btn" type="button">Add to Cart 🛒</button>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card card-2" tabindex="0" aria-label="Disco Avocado t-shirt">
+            <div class="card-emoji">🥑</div>
+            <div class="card-body">
+              <h3 class="card-name">Disco Avocado</h3>
+              <p class="card-desc">Half fruit, half legend. This avocado lives on the dance floor.</p>
+              <div class="card-price">$27.99</div>
+              <button class="card-btn" type="button">Add to Cart 🛒</button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card card-3" tabindex="0" aria-label="Cosmic Pizza t-shirt">
+            <div class="card-emoji">🍕</div>
+            <div class="card-body">
+              <h3 class="card-name">Cosmic Pizza</h3>
+              <p class="card-desc">A pizza slice orbiting Saturn. Extra cheese, zero gravity.</p>
+              <div class="card-price">$31.99</div>
+              <button class="card-btn" type="button">Add to Cart 🛒</button>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card card-4" tabindex="0" aria-label="Unicorn Explosion t-shirt">
+            <div class="card-emoji">🦄</div>
+            <div class="card-body">
+              <h3 class="card-name">Unicorn Explosion</h3>
+              <p class="card-desc">Rainbows, glitter, and pure mythical madness printed at 300 DPI.</p>
+              <div class="card-price">$34.99</div>
+              <button class="card-btn" type="button">Add to Cart 🛒</button>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="card card-5" tabindex="0" aria-label="Retro Banana t-shirt">
+            <div class="card-emoji">🍌</div>
+            <div class="card-body">
+              <h3 class="card-name">Retro Banana</h3>
+              <p class="card-desc">Straight outta the 80s — this banana has a boombox and an attitude.</p>
+              <div class="card-price">$26.99</div>
+              <button class="card-btn" type="button">Add to Cart 🛒</button>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="card card-6" tabindex="0" aria-label="Galactic Cat t-shirt">
+            <div class="card-emoji">🐱</div>
+            <div class="card-body">
+              <h3 class="card-name">Galactic Cat</h3>
+              <p class="card-desc">A cat riding a laser beam through the Milky Way. Meow-jestic.</p>
+              <div class="card-price">$32.99</div>
+              <button class="card-btn" type="button">Add to Cart 🛒</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============  WHY US  ============ -->
+      <section class="why-us" aria-label="Why choose us">
+        <h2 class="section-title">🤔 Why THREADZ?</h2>
+        <div class="perks">
+          <div class="perk">
+            <span class="perk-icon">🧵</span>
+            <h3>Absurdly Soft</h3>
+            <p>Like wearing a cloud that went to art school.</p>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">🎨</span>
+            <h3>Bold AF Designs</h3>
+            <p>Our artists definitely had too much coffee.</p>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">🌍</span>
+            <h3>Eco-Friendly</h3>
+            <p>100% organic cotton. The planet says thanks.</p>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">📦</span>
+            <h3>Free Shipping</h3>
+            <p>Worldwide. No sneaky fees. Pinky promise.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============  NEWSLETTER  ============ -->
+      <section class="newsletter" aria-label="Newsletter signup">
+        <h2 class="section-title">📬 Get First Dibs</h2>
+        <p class="section-subtitle">Drop your email and we'll slide new designs into your inbox (no spam, we promise 🤞)</p>
+        <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+          <label for="email-input" class="sr-only">Email address</label>
+          <input
+            id="email-input"
+            type="email"
+            placeholder="you@funkymail.com"
+            required
+            class="newsletter-input"
+            aria-label="Email address"
+          />
+          <button type="submit" class="newsletter-btn">Subscribe 🎉</button>
+        </form>
+        <p id="subscribe-msg" class="subscribe-msg" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <!-- ============  FOOTER  ============ -->
+    <footer class="footer" role="contentinfo">
+      <p>© 2026 THREADZ — Made with 💜 and questionable taste</p>
+      <p class="footer-links">
+        <a href="/support">Support</a>
+        <span aria-hidden="true"> · </span>
+        <a href="#">Instagram</a>
+        <span aria-hidden="true"> · </span>
+        <a href="#">TikTok</a>
+      </p>
+    </footer>
+
     <script>
-      function selectLanguage() {
-        var language = prompt("Please select a language: Deutsch or English");
-        if (language.toLowerCase() === "deutsch") {
-          document.body.innerHTML = document.body.innerHTML.replace(/HELLO LEARNING DAY/g, "HALLO LERNTAG");
-          document.body.innerHTML = document.body.innerHTML.replace(/Welcome to the GitHub Copilot hands-on!/g, "Willkommen zum GitHub Copilot Hands-on!");
-        } else if (language.toLowerCase() === "english") {
-          document.body.innerHTML = document.body.innerHTML.replace(/HALLO LERNTAG/g, "HELLO LEARNING DAY");
-          document.body.innerHTML = document.body.innerHTML.replace(/Willkommen zum GitHub Copilot Hands-on!/g, "Welcome to the GitHub Copilot hands-on!");
-        }
+      function handleSubscribe(event) {
+        event.preventDefault();
+        var msg = document.getElementById("subscribe-msg");
+        msg.textContent = "🎉 You're in! Prepare for awesomeness.";
+        msg.classList.add("visible");
+        event.target.reset();
       }
 
-      function navigateToSupport() {
-        window.location.href = "/support";
-      }
+      /* Add-to-cart pop effect */
+      document.querySelectorAll(".card-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          btn.textContent = "Added! ✅";
+          btn.classList.add("added");
+          setTimeout(function () {
+            btn.textContent = "Add to Cart 🛒";
+            btn.classList.remove("added");
+          }, 1500);
+        });
+      });
     </script>
   </body>
 </html>
